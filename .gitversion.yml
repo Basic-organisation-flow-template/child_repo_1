@@ -1,4 +1,4 @@
-mode: Mainline
+mode: ContinuousDelivery
 branches:
   main:
     regex: ^main$
@@ -11,15 +11,20 @@ branches:
     tag: dev
     source-branches: ['main']
   sprint:
-    regex: ^sprint-
+    regex: ^sprint-.+$
     increment: Patch
     tag: sprint
-    source-branches: ['dev', 'main']
+    source-branches: ['dev']
   feature:
-    regex: ^feature[/-]
+    regex: ^feature[/-].+$
     increment: Patch
     tag: feature
     source-branches: ['sprint', 'dev']
+  hotfix:
+    regex: ^hotfix([/-].+)?$
+    increment: Patch
+    tag: hotfix
+    source-branches: ['main']
 ignore:
   sha: []
 merge-message-strategy: MergeMessage
