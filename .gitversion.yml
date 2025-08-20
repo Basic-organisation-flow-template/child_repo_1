@@ -14,7 +14,7 @@ branches:
     regex: ^sprint$
     increment: Patch
     tag: sprint
-    source-branches: ['dev']
+    source-branches: ['dev', 'main']
   feature:
     regex: ^feature[/-]
     increment: Patch
