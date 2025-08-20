@@ -1,0 +1,25 @@
+mode: Mainline
+branches:
+  main:
+    regex: ^main$
+    increment: Minor
+    is-mainline: true
+    tag: ''
+  dev:
+    regex: ^dev$
+    increment: Minor
+    tag: dev
+    source-branches: ['main']
+  sprint:
+    regex: ^sprint$
+    increment: Patch
+    tag: sprint
+    source-branches: ['dev']
+  feature:
+    regex: ^feature[/-]
+    increment: Patch
+    tag: feature
+    source-branches: ['sprint', 'dev']
+ignore:
+  sha: []
+merge-message-strategy: MergeMessage
