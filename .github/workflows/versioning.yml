@@ -8,4 +8,5 @@ on:
 
 jobs:
   call-versioning:
-    uses: your-org/org-workflows/.github/workflows/gitversion.yml@feature/testing_gitversion
+    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
+
