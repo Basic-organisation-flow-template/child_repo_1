@@ -2,7 +2,7 @@ mode: Mainline
 branches:
   main:
     regex: ^main$
-    increment: Minor
+    increment: Major
     is-mainline: true
     tag: ''
   dev:
