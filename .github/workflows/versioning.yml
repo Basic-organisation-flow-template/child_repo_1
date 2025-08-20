@@ -8,4 +8,4 @@ on:
 
 jobs:
   call-versioning:
-    uses: your-org/org-workflows/.github/workflows/gitversion.yml@main
+    uses: your-org/org-workflows/.github/workflows/gitversion.yml@feature/testing_gitversion
