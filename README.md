@@ -1,6 +1,7 @@
-﻿# child_repo_1
+# child_repo_1
 
-dev
+main
+
 
 
 
