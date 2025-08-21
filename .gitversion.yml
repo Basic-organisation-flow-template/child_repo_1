@@ -6,7 +6,7 @@ branches:
     is-mainline: true
     tag: ''
   dev:
-    regex: ^dev$
+    regex: ^dev$ 
     increment: Minor
     tag: dev
     source-branches: ['main']
