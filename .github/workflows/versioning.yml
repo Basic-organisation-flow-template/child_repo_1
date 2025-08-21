@@ -7,6 +7,11 @@ on:
   #   branches: [main, dev, sprint, feature/**]
 
 jobs:
+
+  call-main-tagging:
+    if: github.ref == 'refs/heads/main'
+    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/tagging.yml@feature/testing_gitversion
+
   call-versioning:
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
 
