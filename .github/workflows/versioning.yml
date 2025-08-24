@@ -4,7 +4,8 @@ on:
   push:
     branches: [main, QA, dev, feature/**]
   pull_request:
-    branches: [main, dev, sprint, feature/**]
+    branches: [main, QA, dev, feature/**]
+
 
 jobs:
 
@@ -14,7 +15,7 @@ jobs:
 
 
   call-versioning-main:
-    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/QA') && needs.call-main-tagging.outputs.needs_tag == 'false'
+    if: (contains('refs/heads/main,refs/heads/QA', github.ref) || contains('main,QA', github.base_ref)) && needs.call-main-tagging.outputs.needs_tag == 'false'
     needs: call-main-tagging
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
 
