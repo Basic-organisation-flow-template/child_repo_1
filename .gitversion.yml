@@ -4,9 +4,9 @@ branches:
     regex: ^main$
     increment: Major
     label: ''
-    source-branches: ['QA', 'hotfix']
-  QA:
-    regex: ^QA$
+    source-branches: ['release', 'hotfix']
+  release:
+    regex: ^release$
     increment: Major
     label: release
     source-branches: ['dev', 'hotfix']
