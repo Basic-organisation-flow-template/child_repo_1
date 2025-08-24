@@ -5,21 +5,21 @@ branches:
     increment: Major
     is-mainline: true
     tag: ''
-  dev:
-    regex: ^dev$ 
-    increment: Minor
-    tag: dev
+  QA:
+    regex: ^QA$ 
+    increment: Major
+    tag: release
     source-branches: ['main']
-  sprint:
-    regex: ^sprint-.+$
-    increment: Patch
+  dev:
+    regex: ^dev$
+    increment: Minor
     tag: sprint
-    source-branches: ['dev']
+    source-branches: ['main']
   feature:
     regex: ^feature[/-].+$
     increment: Patch
     tag: feature
-    source-branches: ['sprint', 'dev']
+    source-branches: ['main', 'dev']
   hotfix:
     regex: ^hotfix([/-].+)?$
     increment: Patch

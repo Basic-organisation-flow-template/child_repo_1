@@ -2,22 +2,26 @@ name: Use Central GitVersion Workflow
 
 on:
   push:
-    branches: [main, dev, sprint-*, feature/**]
+    branches: [main, QA, dev, feature/**]
   # pull_request:
   #   branches: [main, dev, sprint, feature/**]
 
 jobs:
 
   call-main-tagging:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/QA'
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/tagging.yml@feature/testing_gitversion
+    outputs:
+      needs_tag: ${{ outputs.needs_tag }}
+
 
   call-versioning-main:
-    if: github.ref == 'refs/heads/main'
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/QA') &&  ! needs.call-main-tagging.outputs.needs_tag == 'true'
     needs: call-main-tagging
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
+
 
   call-versioning-other-branches:
     if: github.ref != 'refs/heads/main'
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
-
+# commit msg -- Merge feature/xyz into main +semver: major
