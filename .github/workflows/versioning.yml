@@ -27,6 +27,7 @@ jobs:
 
   debug-context:
     runs-on: ubuntu-latest
+    needs: call-main-tagging
     steps:
       - name: Print GitHub context
         run: |
