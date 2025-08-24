@@ -5,26 +5,25 @@ branches:
     increment: Major
     is-mainline: true
     tag: ''
+    source-branches: ['QA', 'hotfix']
   QA:
     regex: ^QA$ 
     increment: Major
     tag: release
-    source-branches: ['main']
+    source-branches: ['dev', 'hotfix']
   dev:
     regex: ^dev$
     increment: Minor
     tag: sprint
-    source-branches: ['main']
+    source-branches: ['feature']
   feature:
     regex: ^feature[/-].+$
     increment: Patch
     tag: feature
-    source-branches: ['main', 'dev']
   hotfix:
     regex: ^hotfix([/-].+)?$
     increment: Patch
     tag: hotfix
-    source-branches: ['main']
 ignore:
   sha: []
 merge-message-strategy: MergeMessage
