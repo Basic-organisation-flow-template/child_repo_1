@@ -14,7 +14,7 @@ jobs:
 
 
   call-versioning-main:
-    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/QA') && needs.call-main-tagging.outputs.needs_tag != 'true'
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/QA') && needs.call-main-tagging.outputs.needs_tag == 'false'
     needs: call-main-tagging
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
 
