@@ -8,7 +8,7 @@ branches:
     source-branches: ['QA', 'hotfix']
   QA:
     regex: ^QA$ 
-    increment: Major
+    increment: Major # release should come
     tag: release
     source-branches: ['dev', 'hotfix']
   dev:
