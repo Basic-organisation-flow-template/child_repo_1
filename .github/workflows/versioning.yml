@@ -3,8 +3,8 @@ name: Use Central GitVersion Workflow
 on:
   push:
     branches: [main, QA, dev, feature/**]
-  # pull_request:
-  #   branches: [main, dev, sprint, feature/**]
+  pull_request:
+    branches: [main, dev, sprint, feature/**]
 
 jobs:
 
