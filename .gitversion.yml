@@ -3,27 +3,27 @@ branches:
   main:
     regex: ^main$
     increment: Major
-    is-mainline: true
-    tag: ''
+    label: ''
     source-branches: ['QA', 'hotfix']
   QA:
-    regex: ^QA$ 
-    increment: Major # release should come
-    tag: release
+    regex: ^QA$
+    increment: Major
+    label: release
     source-branches: ['dev', 'hotfix']
   dev:
     regex: ^dev$
     increment: Minor
-    tag: sprint
+    label: sprint
     source-branches: ['feature']
   feature:
     regex: ^feature[/-].+$
     increment: Patch
-    tag: feature
+    label: feature
   hotfix:
     regex: ^hotfix([/-].+)?$
     increment: Patch
-    tag: hotfix
+    label: hotfix
 ignore:
   sha: []
 merge-message-strategy: MergeMessage
+
