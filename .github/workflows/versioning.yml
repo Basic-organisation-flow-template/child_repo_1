@@ -23,3 +23,14 @@ jobs:
     if: github.ref != 'refs/heads/main'
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
 # commit msg -- Merge feature/xyz into main +semver: major
+
+  debug-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub context
+        run: |
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.base_ref: ${{ github.base_ref }}"
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "needs_tag: ${{ needs.call-main-tagging.outputs.needs_tag }}"
+
