@@ -6,11 +6,6 @@ branches:
     increment: Minor
     label: sprint
     source-branches: ['feature']
-  develop:
-    regex: ^develop$
-    increment: Minor
-    label: sprint
-    source-branches: ['feature']
   main:
     regex: ^main$
     increment: Major
