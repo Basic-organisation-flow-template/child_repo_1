@@ -1,20 +1,27 @@
-mode: Mainline
+mode: ContinuousDelivery
+# merge-message-strategy: MergeMessage
 branches:
+  dev:
+    regex: ^dev$
+    increment: Minor
+    label: sprint
+    source-branches: ['feature']
+  develop:
+    regex: ^develop$
+    increment: Minor
+    label: sprint
+    source-branches: ['feature']
   main:
     regex: ^main$
     increment: Major
     label: ''
+    is-main-branch: true
     source-branches: ['release', 'hotfix']
   release:
     regex: ^release$
     increment: Major
     label: release
     source-branches: ['dev', 'hotfix']
-  dev:
-    regex: ^dev$
-    increment: Minor
-    label: sprint
-    source-branches: ['feature']
   feature:
     regex: ^feature[/-].+$
     increment: Patch
@@ -25,5 +32,3 @@ branches:
     label: hotfix
 ignore:
   sha: []
-merge-message-strategy: MergeMessage
-
