@@ -1,9 +1,11 @@
-mode: Mainline
+mode: ContinuousDelivery
+# merge-message-strategy: MergeMessage
 branches:
   main:
     regex: ^main$
     increment: Major
     label: ''
+    is-main-branch: true
     source-branches: ['release', 'hotfix']
   release:
     regex: ^release$
@@ -25,5 +27,3 @@ branches:
     label: hotfix
 ignore:
   sha: []
-merge-message-strategy: MergeMessage
-
