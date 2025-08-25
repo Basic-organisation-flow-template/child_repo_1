@@ -2,7 +2,7 @@ name: Use Central GitVersion Workflow
 
 on:
   push:
-    branches: [main, release, develop, dev, feature/**]
+    branches: [main, release, dev, feature/**]
   # pull_request:
   #   branches: [main, release, dev, feature/**]
 
@@ -14,14 +14,14 @@ jobs:
   #   uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/tagging.yml@feature/testing_gitversion
 
 
-  call-versioning-main-or-qa:
-    if: (contains('refs/heads/main,refs/heads/release', github.ref) || contains('main,release', github.base_ref)) && needs.call-main-tagging.outputs.needs_tag == 'false'
-    # needs: call-main-tagging
-    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
+  # call-versioning-main-or-qa:
+  #   if: (contains('refs/heads/main,refs/heads/release', github.ref) || contains('main,release', github.base_ref)) && needs.call-main-tagging.outputs.needs_tag == 'false'
+  #   # needs: call-main-tagging
+  #   uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
 
 
   call-versioning-other-branches:
-    if: (!contains('refs/heads/main,refs/heads/release', github.ref))
+    # if: (!contains('refs/heads/main,refs/heads/release', github.ref))
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
 # commit msg -- Merge feature/xyz into main +semver: major
 
