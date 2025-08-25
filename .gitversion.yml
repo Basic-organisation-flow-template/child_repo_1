@@ -1,6 +1,16 @@
 mode: ContinuousDelivery
 # merge-message-strategy: MergeMessage
 branches:
+  dev:
+    regex: ^dev$
+    increment: Minor
+    label: sprint
+    source-branches: ['feature']
+  develop:
+    regex: ^develop$
+    increment: Minor
+    label: sprint
+    source-branches: ['feature']
   main:
     regex: ^main$
     increment: Major
@@ -12,11 +22,6 @@ branches:
     increment: Major
     label: release
     source-branches: ['dev', 'hotfix']
-  dev:
-    regex: ^dev$
-    increment: Minor
-    label: sprint
-    source-branches: ['feature']
   feature:
     regex: ^feature[/-].+$
     increment: Patch
