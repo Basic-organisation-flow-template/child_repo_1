@@ -3,6 +3,14 @@ mode: ContinuousDelivery
 branches:
   dev:
     regex: ^dev$
+<<<<<<< HEAD
+=======
+    increment: Minor
+    label: sprint
+    source-branches: ['feature']
+  develop:
+    regex: ^develop$
+>>>>>>> 61d76e1cef17c35b5cacec1d1c25cf1e6f643acb
     increment: Minor
     label: sprint
     source-branches: ['feature']
