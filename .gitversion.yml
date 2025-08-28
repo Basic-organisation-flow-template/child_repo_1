@@ -3,7 +3,7 @@ branches:
   dev:
     regex: ^dev$
     increment: Minor
-    label: alpha
+    label: dev
     source-branches: ['feature']
   main:
     regex: ^main$
