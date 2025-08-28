@@ -1,5 +1,5 @@
 # child_repo_
-main  
+release  
  
 
 
@@ -7,6 +7,7 @@ main
 
 
  
+
 
 
 
