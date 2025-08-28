@@ -11,7 +11,7 @@ branches:
     is-release-branch: false
     is-mainline: true
     pre-release-weight: 55000
-  develop:
+  dev:
     regex: ^dev$
     mode: ContinuousDeployment
     tag: alpha
