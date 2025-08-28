@@ -3,10 +3,10 @@ branches:
     regex: ^main$
     mode: ContinuousDelivery
     tag: ''
-    increment: Patch
+    increment: Major
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    source-branches: [ 'dev', 'release' ]
+    source-branches: [ 'release', 'hotfix']
     tracks-release-branches: false
     is-release-branch: false
     is-mainline: true
@@ -27,10 +27,10 @@ branches:
     regex: ^release$
     mode: ContinuousDelivery
     tag: beta
-    increment: None
+    increment: Major
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    source-branches: [ 'dev', 'main', 'release' ]
+    source-branches: [ 'dev', 'main', 'release', 'hotfix' ]
     tracks-release-branches: false
     is-release-branch: true
     is-mainline: false
@@ -67,7 +67,7 @@ branches:
     increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
-    source-branches: [ 'dev', 'main', 'support' ]
+    source-branches: [ 'dev', 'main', 'release' ]
     tracks-release-branches: false
     is-release-branch: false
     is-mainline: false
