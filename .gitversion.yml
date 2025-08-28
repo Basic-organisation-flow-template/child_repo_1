@@ -1,10 +1,17 @@
 mode: ContinuousDelivery
 branches:
-  dev:
-    regex: ^dev$
+  develop:
+    regex: ^dev(elop)?(ment)?$
+    mode: ContinuousDeployment
+    tag: alpha
     increment: Minor
-    label: alpha
-    source-branches: ['feature']
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: true
+    source-branches: []
+    tracks-release-branches: true
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 0
   main:
     regex: ^main$
     increment: Major
