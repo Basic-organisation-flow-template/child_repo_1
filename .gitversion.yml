@@ -12,7 +12,7 @@ branches:
     is-mainline: true
     pre-release-weight: 55000
   develop:
-    regex: ^dev(elop)?(ment)?$
+    regex: ^dev$
     mode: ContinuousDeployment
     tag: alpha
     increment: Minor
