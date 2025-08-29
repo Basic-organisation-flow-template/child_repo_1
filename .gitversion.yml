@@ -1,30 +1,33 @@
-mode: ContinuousDelivery
-# merge-message-strategy: MergeMessage
+mode: Mainline
 branches:
-  dev:
-    regex: ^dev$
-    increment: Minor
-    label: sprint
-    source-branches: ['feature']
-
   main:
-    regex: ^main$
     increment: Major
-    label: ''
-    is-main-branch: true
+    tag: ''
+    prevent-increment-of-merged-branch-version: true
+    regex: main
     source-branches: ['release', 'hotfix']
   release:
-    regex: ^release$
     increment: Major
-    label: release
+    tag: 'rc'
+    prevent-increment-of-merged-branch-version: true
+    regex: release[/-]
     source-branches: ['dev', 'hotfix']
+  dev:
+    increment: Minor
+    tag: 'dev'
+    prevent-increment-of-merged-branch-version: true
+    regex: dev
+    source-branches: ['feature']
   feature:
-    regex: ^feature[/-].+$
-    increment: Patch
-    label: feature
+    increment: Minor
+    tag: 'feature'
+    regex: feature[/-]
+    source-branches: ['dev']
   hotfix:
-    regex: ^hotfix([/-].+)?$
     increment: Patch
-    label: hotfix
+    tag: 'hotfix'
+    regex: hotfix[/-]
+    source-branches: ['main', 'release']
 ignore:
   sha: []
+commit-message-incrementing: Enabled
