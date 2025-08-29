@@ -12,7 +12,7 @@ jobs:
   call-versioning-other-branches:
     # if: (!contains('refs/heads/main,refs/heads/release', github.ref))
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
-# commit msg -- Merge feature/xyz into main +semver: major
+
 
   debug-context:
     runs-on: ubuntu-latest
