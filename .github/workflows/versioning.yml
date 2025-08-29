@@ -12,7 +12,7 @@ on:
 # on:
 #   pull_request:
 #     types: [closed]
-
+ 
 jobs:
 
   call-versioning-other-branches:
