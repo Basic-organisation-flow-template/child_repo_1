@@ -8,8 +8,6 @@ on:
       - release
       - 'feature/**'
       - 'hotfix/**'
-  pull_request:
-    types: [closed]
 
 
 jobs:
