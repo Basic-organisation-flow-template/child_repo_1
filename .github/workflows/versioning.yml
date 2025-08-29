@@ -8,14 +8,19 @@ on:
       - release
       - 'hotfix/**'
       - 'feature/**'
+      
+# on:
+#   pull_request:
+#     types: [closed]
 
 jobs:
 
   call-versioning-other-branches:
-    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/version.yml@feature/testing_gitversion
-    with:
-      base_ref: ${{ github.event.pull_request.base.ref }}
-      head_ref: ${{ github.event.pull_request.head.ref }}
+    # if: github.event.pull_request.merged == true
+    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
+    # with:
+    #   base_ref: ${{ github.event.pull_request.base.ref }}
+    #   head_ref: ${{ github.event.pull_request.head.ref }}
 
   debug-context:
     runs-on: ubuntu-latest
