@@ -2,7 +2,12 @@ name: Use Central GitVersion Workflow
 
 on:
   push:
-    branches: [main, release, dev, feature/**]
+    branches:
+      - main
+      - dev
+      - release
+      - 'feature/**'
+      - 'hotfix/**'
   pull_request:
     types: [closed]
 
