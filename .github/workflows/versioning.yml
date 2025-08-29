@@ -10,8 +10,13 @@ on:
       - 'feature/**'
 
 jobs:
-
+  versioning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
   call-versioning-other-branches:
+    if: github.event.pull_request.merged == true
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/version.yml@feature/testing_gitversion
     with:
       base_ref: ${{ github.event.pull_request.base.ref }}
