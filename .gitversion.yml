@@ -3,16 +3,19 @@ branches:
   main:
     increment: Major
     tag: ''
+    prevent-increment-of-merged-branch-version: true
     regex: main
     source-branches: ['release', 'hotfix']
   release:
     increment: Major
     tag: 'rc'
+    prevent-increment-of-merged-branch-version: true
     regex: release[/-]
     source-branches: ['dev', 'hotfix']
   dev:
     increment: Minor
     tag: 'dev'
+    prevent-increment-of-merged-branch-version: true
     regex: dev
     source-branches: ['feature']
   feature:
