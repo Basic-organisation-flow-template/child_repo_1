@@ -9,9 +9,6 @@ on:
       - 'hotfix/**'
       - 'feature/**'
       
-# on:
-#   pull_request:
-#     types: [closed]
  
 jobs:
 
