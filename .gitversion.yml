@@ -1,30 +1,30 @@
 mode: Mainline
-branches:
-  main:
-    increment: Major
-    tag: ''
-    regex: main
-    source-branches: ['release', 'hotfix']
-  release:
-    increment: Major
-    tag: 'rc'
-    regex: release[/-]
-    source-branches: ['dev', 'hotfix']
-  dev:
-    increment: Minor
-    tag: 'dev'
-    regex: dev
-    source-branches: ['feature']
-  feature:
-    increment: Minor
-    tag: 'feature'
-    regex: feature[/-]
-    source-branches: ['dev']
-  hotfix:
-    increment: Patch
-    tag: 'hotfix'
-    regex: hotfix[/-]
-    source-branches: ['main', 'release']
-ignore:
-  sha: []
-commit-message-incrementing: Enabled
+# branches:
+#   main:
+#     increment: Major
+#     tag: ''
+#     regex: main
+#     source-branches: ['release', 'hotfix']
+#   release:
+#     increment: Major
+#     tag: 'rc'
+#     regex: release[/-]
+#     source-branches: ['dev', 'hotfix']
+#   dev:
+#     increment: Minor
+#     tag: 'dev'
+#     regex: dev
+#     source-branches: ['feature']
+#   feature:
+#     increment: Minor
+#     tag: 'feature'
+#     regex: feature[/-]
+#     source-branches: ['dev']
+#   hotfix:
+#     increment: Patch
+#     tag: 'hotfix'
+#     regex: hotfix[/-]
+#     source-branches: ['main', 'release']
+# ignore:
+#   sha: []
+# commit-message-incrementing: Enabled
