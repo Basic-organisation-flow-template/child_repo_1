@@ -49,4 +49,3 @@ branches:
     label: '{BranchName}'
     source-branches: ['dev', 'main'] 
     track-merge-target: true
- 
