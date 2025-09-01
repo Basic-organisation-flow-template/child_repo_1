@@ -39,6 +39,7 @@ branches:
   feature:
     regex: ^feature?[/-]
     increment: Minor
-    label: useBranchName
+    label: beta
+    # label: useBranchName
     source-branches: ['develop', 'main']
   
