@@ -15,8 +15,8 @@ branches:
     label: '' # Empty label for production releases
   
   # The development branch receives incremental versions.
-  develop:
-    regex: ^dev(elop)?(ment)?$
+  dev:
+    regex: ^dev$
     increment: Minor
     label: dev
   
