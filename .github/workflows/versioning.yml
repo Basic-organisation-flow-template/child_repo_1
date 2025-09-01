@@ -5,9 +5,14 @@ on:
     branches:
       - main
       - dev
-      - release
+      - 'release/**'
       - 'hotfix/**'
       - 'feature/**'
+  # pull_request:
+  #   branches:
+  #     - main
+  #     - develop
+  #     - 'release/**'
       
  
 jobs:

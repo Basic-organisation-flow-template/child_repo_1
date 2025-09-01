@@ -26,12 +26,14 @@ branches:
     increment: Minor
     label: dev
 
+
   # Release branches are for final testing before a production release.
   release:
     regex: ^release$
     increment: Major
     label: release
     is-release-branch: true
+
     source-branches: ['main', 'dev']
     track-merge-target: true
   
@@ -42,6 +44,7 @@ branches:
     label: beta
     source-branches: ['main']
     track-merge-target: true
+
   
   # Feature branches use the branch name as a pre-release label.
   feature:
