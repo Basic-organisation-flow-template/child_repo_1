@@ -15,18 +15,27 @@ branches:
     label: '' # Empty label for production releases
   
   # The development branch receives incremental versions.
-  develop:
-    regex: ^dev(elop)?(ment)?$
+  dev:
+    regex: ^dev$
     increment: Minor
     label: dev
-  
+    
+# just to overwrite the existing default configuration 
+  develop:
+    regex: ^develop$
+    increment: Minor
+    label: dev
+
+
   # Release branches are for final testing before a production release.
   release:
     regex: ^release$
     increment: Major
     label: release
     is-release-branch: true
-    source-branches: ['main', 'develop']
+
+    source-branches: ['main', 'dev']
+    track-merge-target: true
   
   # Hotfix branches are for critical patches to the main branch.
   hotfix:
@@ -34,12 +43,14 @@ branches:
     increment: Patch
     label: beta
     source-branches: ['main']
+    track-merge-target: true
+
   
   # Feature branches use the branch name as a pre-release label.
   feature:
     regex: ^feature[/-](?<BranchName>.+)
     increment: Minor
     label: '{BranchName}'
-    source-branches: ['develop', 'main'] 
+    source-branches: ['dev', 'main'] 
     track-merge-target: true
  
