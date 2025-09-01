@@ -1,3 +1,4 @@
+
 # GitVersion.yml
 # For more options, see the official documentation at https://gitversion.net/docs/reference/configuration
 
@@ -6,6 +7,7 @@ assembly-versioning-scheme: MajorMinorPatch
 major-version-bump-message: '\+semver:\s?(breaking|major)'
 minor-version-bump-message: '\+semver:\s?(feature|minor)'
 patch-version-bump-message: '\+semver:\s?(fix|patch)'
+
 
 branches:
   # The main branch will create a new minor version upon merge.
