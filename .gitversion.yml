@@ -19,7 +19,6 @@ branches:
     regex: ^dev(elop)?(ment)?$
     increment: Minor
     label: dev
-    track-merge-target: true
   
   # Release branches are for final testing before a production release.
   release:
@@ -42,5 +41,5 @@ branches:
     increment: Minor
     label: '{BranchName}'
     source-branches: ['develop', 'main'] 
-    track-merge-target: true
+
  
