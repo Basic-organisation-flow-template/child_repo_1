@@ -22,7 +22,7 @@ branches:
   
   # Release branches are for final testing before a production release.
   release:
-    regex: ^release?[/-]
+    regex: ^release$
     increment: Major
     label: release
     is-release-branch: true
@@ -39,7 +39,7 @@ branches:
   feature:
     regex: ^feature?[/-]
     increment: Minor
-    label: '{BranchName}'
+    label: BranchName
     source-branches: ['develop', 'main'] 
 
  
