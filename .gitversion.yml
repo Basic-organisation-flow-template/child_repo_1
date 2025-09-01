@@ -12,19 +12,19 @@ branches:
   main:
     regex: ^(main|master)$
     increment: Major
-    tag: '' # Empty tag for production releases
+    label: '' # Empty label for production releases
   
   # The development branch receives incremental versions.
   develop:
     regex: ^dev(elop)?(ment)?$
     increment: Minor
-    tag: dev
+    label: dev
   
   # Release branches are for final testing before a production release.
   release:
     regex: ^release?[/-]
     increment: Major
-    tag: release
+    label: release
     is-release-branch: true
     source-branches: ['main', 'develop']
   
@@ -32,18 +32,18 @@ branches:
   hotfix:
     regex: ^hotfix?[/-]
     increment: Patch
-    tag: beta
+    label: beta
     source-branches: ['main']
   
-  # Feature branches use the branch name as a pre-release tag.
+  # Feature branches use the branch name as a pre-release label.
   feature:
     regex: ^feature?[/-]
     increment: Minor
-    tag: useBranchName
+    label: useBranchName
     source-branches: ['develop', 'main']
   
-  # # Pull Request branches get tagged with 'pull-request'.
+  # # Pull Request branches get labelged with 'pull-request'.
   # pull-request:
   #   regex: ^(pull-request|pr)[/-]
-  #   tag: pull-request
+  #   label: pull-request
   #   mode: ContinuousDeployment
