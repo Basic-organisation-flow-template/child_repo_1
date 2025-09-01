@@ -1,4 +1,3 @@
-
 # GitVersion.yml
 # For more options, see the official documentation at https://gitversion.net/docs/reference/configuration
 
@@ -7,7 +6,6 @@ assembly-versioning-scheme: MajorMinorPatch
 major-version-bump-message: '\+semver:\s?(breaking|major)'
 minor-version-bump-message: '\+semver:\s?(feature|minor)'
 patch-version-bump-message: '\+semver:\s?(fix|patch)'
-
 
 branches:
   # The main branch will create a new minor version upon merge.
@@ -28,14 +26,12 @@ branches:
     increment: Minor
     label: dev
 
-
   # Release branches are for final testing before a production release.
   release:
     regex: ^release$
     increment: Major
     label: release
     is-release-branch: true
-
     source-branches: ['main', 'dev']
     track-merge-target: true
   
@@ -45,8 +41,6 @@ branches:
     increment: Patch
     label: beta
     source-branches: ['main']
-    track-merge-target: true
-
   
   # Feature branches use the branch name as a pre-release label.
   feature:
@@ -55,4 +49,3 @@ branches:
     label: '{BranchName}'
     source-branches: ['dev', 'main'] 
     track-merge-target: true
- 
