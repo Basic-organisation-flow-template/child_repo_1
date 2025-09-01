@@ -41,5 +41,6 @@ branches:
     increment: Minor
     label: '{BranchName}'
     source-branches: ['develop', 'main'] 
+    track-merge-target: true
 
  
