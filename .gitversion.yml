@@ -33,6 +33,7 @@ branches:
     label: release
     is-release-branch: true
     source-branches: ['main', 'dev']
+    track-merge-target: true
   
   # Hotfix branches are for critical patches to the main branch.
   hotfix:
@@ -40,6 +41,7 @@ branches:
     increment: Patch
     label: beta
     source-branches: ['main']
+    track-merge-target: true
   
   # Feature branches use the branch name as a pre-release label.
   feature:
