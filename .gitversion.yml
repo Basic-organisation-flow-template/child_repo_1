@@ -37,7 +37,7 @@ branches:
   
   # Feature branches use the branch name as a pre-release label.
   feature:
-    regex: ^feature?[/-]
+    regex: ^feature[/-](?<BranchName>.+)
     increment: Minor
     label: '{BranchName}'
     source-branches: ['develop', 'main'] 
