@@ -5,31 +5,20 @@ on:
     branches:
       - main
       - dev
-      - release
+      - 'release/**'
       - 'hotfix/**'
       - 'feature/**'
+  # pull_request:
+  #   branches:
+  #     - main
+  #     - develop
+  #     - 'release/**'
       
-# on:
-#   pull_request:
-#     types: [closed]
  
 jobs:
 
   call-versioning-other-branches:
-    # if: github.event.pull_request.merged == true
-    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/gitversion.yml@feature/testing_gitversion
-    # with:
-    #   base_ref: ${{ github.event.pull_request.base.ref }}
-    #   head_ref: ${{ github.event.pull_request.head.ref }}
-
-  debug-context:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print GitHub context
-        run: |
-          echo "github.ref: ${{ github.ref }}"
-          echo "github.base_ref: ${{ github.base_ref }}"
-          echo "github.event_name: ${{ github.event_name }}"
+    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/final.yml@feature/testing_gitversion
 
 
 

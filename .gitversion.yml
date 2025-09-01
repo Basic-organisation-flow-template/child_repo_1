@@ -1,30 +1,45 @@
-mode: Mainline
+# GitVersion.yml
+# For more options, see the official documentation at https://gitversion.net/docs/reference/configuration
+
+mode: ContinuousDelivery
+assembly-versioning-scheme: MajorMinorPatch
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+
 branches:
+  # The main branch will create a new minor version upon merge.
   main:
+    regex: ^(main|master)$
     increment: Major
-    tag: ''
-    regex: main
-    source-branches: ['release', 'hotfix']
+    label: '' # Empty label for production releases
+  
+  # The development branch receives incremental versions.
+  develop:
+    regex: ^dev(elop)?(ment)?$
+    increment: Minor
+    label: dev
+  
+  # Release branches are for final testing before a production release.
   release:
+    regex: ^release$
     increment: Major
-    tag: 'rc'
-    regex: release[/-]
-    source-branches: ['dev', 'hotfix']
-  dev:
-    increment: Minor
-    tag: 'dev'
-    regex: dev
-    source-branches: ['feature']
-  feature:
-    increment: Minor
-    tag: 'feature'
-    regex: feature[/-]
-    source-branches: ['dev']
+    label: release
+    is-release-branch: true
+    source-branches: ['main', 'develop']
+  
+  # Hotfix branches are for critical patches to the main branch.
   hotfix:
+    regex: ^hotfix?[/-]
     increment: Patch
-    tag: 'hotfix'
-    regex: hotfix[/-]
-    source-branches: ['main', 'release']
-ignore:
-  sha: []
-commit-message-incrementing: Enabled
+    label: beta
+    source-branches: ['main']
+  
+  # Feature branches use the branch name as a pre-release label.
+  feature:
+    regex: ^feature[/-](?<BranchName>.+)
+    increment: Minor
+    label: '{BranchName}'
+    source-branches: ['develop', 'main'] 
+    track-merge-target: true
+ 
