@@ -1,24 +1,2 @@
 # child_repo_
-final 
- 
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+final please
