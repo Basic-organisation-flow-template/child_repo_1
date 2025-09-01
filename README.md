@@ -1,22 +1,2 @@
 # child_repo_
-ba 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
+i m done
