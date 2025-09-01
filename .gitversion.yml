@@ -26,7 +26,7 @@ branches:
     increment: Major
     label: release
     is-release-branch: true
-    source-branches: ['main', 'develop']
+    source-branches: ['main', 'dev']
   
   # Hotfix branches are for critical patches to the main branch.
   hotfix:
@@ -40,6 +40,6 @@ branches:
     regex: ^feature[/-](?<BranchName>.+)
     increment: Minor
     label: '{BranchName}'
-    source-branches: ['develop', 'main'] 
+    source-branches: ['dev', 'main'] 
     track-merge-target: true
  
