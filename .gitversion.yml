@@ -41,5 +41,5 @@ branches:
     increment: Minor
     label: beta
     # label: useBranchName
-    source-branches: ['develop', 'main']
+    source-branches: ['develop', 'main'] 
   
