@@ -42,8 +42,3 @@ branches:
     label: useBranchName
     source-branches: ['develop', 'main']
   
-  # # Pull Request branches get labelged with 'pull-request'.
-  # pull-request:
-  #   regex: ^(pull-request|pr)[/-]
-  #   label: pull-request
-  #   mode: ContinuousDeployment
