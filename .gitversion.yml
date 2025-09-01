@@ -41,7 +41,6 @@ branches:
     increment: Patch
     label: beta
     source-branches: ['main']
-    track-merge-target: true
   
   # Feature branches use the branch name as a pre-release label.
   feature:
