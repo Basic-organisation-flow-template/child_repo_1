@@ -19,7 +19,13 @@ branches:
     regex: ^dev$
     increment: Minor
     label: dev
-  
+    
+# just to overwrite the existing default configuration 
+  develop:
+    regex: ^develop$
+    increment: Minor
+    label: dev
+
   # Release branches are for final testing before a production release.
   release:
     regex: ^release$
