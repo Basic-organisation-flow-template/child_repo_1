@@ -40,6 +40,6 @@ branches:
   feature:
     regex: ^feature?[/-]
     increment: Minor
-    label: useBranchName
+    label: '{BranchName}'
     source-branches: ['develop', 'main'] 
     track-merge-target: true
