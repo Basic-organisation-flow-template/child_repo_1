@@ -15,7 +15,7 @@ jobs:
     if: github.event.pull_request.head.ref == ''
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/final.yml@feature/testing_gitversion
 
-  # Job 2: Call the npm workflow, passing the output from Job 1
+
   call-npm:
     needs: call-versioning
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/npm.yml@feature/testing_gitversion
