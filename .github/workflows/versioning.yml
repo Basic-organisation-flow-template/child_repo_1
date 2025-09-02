@@ -8,13 +8,14 @@ on:
       - release
       - 'hotfix/**'
       - 'feature/**'
-      
- 
-jobs:
 
-  call-versioning-other-branches:
+jobs:
+  call-versioning:
     if: github.event.pull_request.head.ref == ''
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/final.yml@feature/testing_gitversion
 
-
-
+  npm-build-and-test:
+    needs: call-versioning
+    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/npm.yml@feature/testing_gitversion
+    with:
+      tag: ${{ needs.call-versioning.outputs.full_semver }}
