@@ -16,8 +16,14 @@ jobs:
     uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/final.yml@feature/testing_gitversion
 
 
-  call-npm:
+  # call-npm:
+  #   needs: call-versioning
+  #   uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/npm.yml@feature/testing_gitversion
+  #   with:
+  #     tag: ${{ needs.call-versioning.outputs.full_semver }}
+
+  call-python:
     needs: call-versioning
-    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/npm.yml@feature/testing_gitversion
+    uses: Basic-organisation-flow-template/standard_central_repo/.github/workflows/python.yml@feature/testing_gitversion
     with:
       tag: ${{ needs.call-versioning.outputs.full_semver }}
